@@ -840,7 +840,7 @@ namespace DesktopUI2.ViewModels
     {
       Analytics.TrackEvent(Analytics.Events.DUIAction, new Dictionary<string, object>() { { "name", "Toggle Theme" } });
       var materialTheme = Application.Current.LocateMaterialTheme<MaterialThemeBase>();
-      var isDark = materialTheme.CurrentTheme.GetBaseTheme() == BaseThemeMode.Dark;
+      var isDark = materialTheme.CurrentTheme.GetBaseThemeMode() == BaseThemeMode.Dark;
 
       MainViewModel.Instance.ChangeTheme(isDark);
 

@@ -10,7 +10,6 @@
   <Application.Styles>
     <themes:MaterialTheme />
 
-
     <StyleInclude Source="avares://Material.Avalonia/Material.Avalonia.Templates.xaml" />
     <StyleInclude Source="avares://Material.Icons.Avalonia/App.xaml" />
     <StyleInclude Source="/Styles/Styles.xaml" />

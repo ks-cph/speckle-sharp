@@ -39,10 +39,9 @@ namespace DesktopUI2
 
     public override void OnFrameworkInitializationCompleted()
     {
+      var themeBootstrap = this.LocateMaterialTheme<MaterialTheme>();
+      themeBootstrap.CurrentTheme = Theme.Create(Theme.Light, Primary, Accent);
 
-      var theme = Theme.Create(Theme.Light, Primary, Accent);
-      var themeBootstrap = this.LocateMaterialTheme<MaterialThemeBase>();
-      themeBootstrap.CurrentTheme = theme;
 
       if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
       {

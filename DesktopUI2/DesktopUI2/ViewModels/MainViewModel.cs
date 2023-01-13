@@ -3,6 +3,7 @@ using Avalonia.Controls;
 using DesktopUI2.Models;
 using DesktopUI2.Views.Pages;
 using Material.Styles.Themes;
+using Material.Styles.Themes.Base;
 using ReactiveUI;
 using Speckle.Core.Credentials;
 using Speckle.Core.Logging;
@@ -142,9 +143,16 @@ namespace DesktopUI2.ViewModels
       if (Application.Current == null)
         return;
 
-      var materialTheme = Application.Current.LocateMaterialTheme<MaterialThemeBase>();
-      var theme = Theme.Create(isDark ? Theme.Light : Theme.Dark, App.Primary, App.Accent);
-      materialTheme.CurrentTheme = theme;
+      MaterialTheme MaterialThemeStyles = Application.Current!.LocateMaterialTheme<MaterialTheme>();
+
+      MaterialThemeStyles.CurrentTheme = Theme.Create(isDark ? Theme.Light : Theme.Dark, App.Primary, App.Accent);
+
+
+      //does not werk
+      //if (isDark)
+      //  MaterialThemeStyles.CurrentTheme.BaseTheme = BaseThemeMode.Light;
+      //else
+      //  MaterialThemeStyles.BaseTheme = BaseThemeMode.Dark;
     }
 
 

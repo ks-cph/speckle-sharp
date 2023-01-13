@@ -28,19 +28,25 @@ namespace DesktopUI2.Launcher
       //while (!Debugger.IsAttached)
       //  Thread.Sleep(100);
 
+      // Avalonia 11.0.0-preview1 issue: CornerRadius not clipping,
+      // Avalonia 11.0.0-preview1 issue: sometimes might crash by collection enumerate fail
+      // TODO: change false to true when avaloniaUI compositor feature is fixed
+      const bool useCompositor = false;
+
       string path = Path.GetDirectoryName(typeof(App).Assembly.Location);
 
       string nativeLib = Path.Combine(path, "Native", "libAvalonia.Native.OSX.dylib");
       return AppBuilder.Configure<App>()
       .UsePlatformDetect()
-      .With(new X11PlatformOptions { UseGpu = false })
+      .With(new X11PlatformOptions { UseGpu = false, UseCompositor = useCompositor })
       .With(new MacOSPlatformOptions { ShowInDock = false })
       .With(new AvaloniaNativePlatformOptions
       {
-        AvaloniaNativeLibraryPath = nativeLib
+        AvaloniaNativeLibraryPath = nativeLib,
+        UseCompositor = useCompositor
       })
       .With(new SkiaOptions { MaxGpuResourceSizeBytes = 8096000 })
-      .With(new Win32PlatformOptions { AllowEglInitialization = true })
+      .With(new Win32PlatformOptions { AllowEglInitialization = true, UseCompositor = useCompositor })
       .LogToTrace()
       .UseReactiveUI();
     }

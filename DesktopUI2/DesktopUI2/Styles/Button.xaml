@@ -3,6 +3,7 @@
   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
   xmlns:assists="clr-namespace:Material.Styles.Assists;assembly=Material.Styles"
   xmlns:c="clr-namespace:Material.Styles.Controls;assembly=Material.Styles"
+  xmlns:cc="clr-namespace:Material.Styles.Controls;assembly=Material.Styles"
   xmlns:icons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia">
   <Design.PreviewWith>
     <StackPanel
@@ -22,6 +23,8 @@
 
       <Button Classes="Send" />
       <Button Classes="SendFull" />
+
+      <cc:FloatingButton Classes="Mini" />
     </StackPanel>
   </Design.PreviewWith>
   <Style Selector="Button">
