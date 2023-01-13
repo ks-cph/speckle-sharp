@@ -26,7 +26,7 @@ namespace DesktopUI2.WPF
     public static AppBuilder BuildAvaloniaApp() => AppBuilder.Configure<DesktopUI2.App>()
     .UsePlatformDetect()
     .With(new SkiaOptions { MaxGpuResourceSizeBytes = 8096000 })
-    .With(new Win32PlatformOptions { AllowEglInitialization = true, EnableMultitouch = false })
+    .With(new Win32PlatformOptions { AllowEglInitialization = true })
     .LogToTrace()
     .UseReactiveUI();
   }

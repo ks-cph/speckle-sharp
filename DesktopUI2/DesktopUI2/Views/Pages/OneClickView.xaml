@@ -3,9 +3,9 @@
   xmlns="https://github.com/avaloniaui"
   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
   xmlns:assists="clr-namespace:Material.Styles.Assists;assembly=Material.Styles"
+  xmlns:c="clr-namespace:Material.Styles.Controls;assembly=Material.Styles"
   xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
   xmlns:icons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
-  xmlns:m="clr-namespace:Material.Styles;assembly=Material.Styles"
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
   d:DesignHeight="550"
   d:DesignWidth="400"
@@ -14,7 +14,7 @@
     <Style Selector="icons|MaterialIcon#send">
       <Setter Property="RenderTransform" Value="rotate(-30deg)" />
     </Style>
-    <Style Selector="m|FloatingButton:pointerover icons|MaterialIcon#send">
+    <Style Selector="c|FloatingButton:pointerover icons|MaterialIcon#send">
       <Setter Property="RenderTransform" Value="rotate(-45deg)" />
     </Style>
   </UserControl.Styles>
@@ -23,7 +23,7 @@
 
     <Grid RowDefinitions="auto, *">
       <!--  HEADER  -->
-      <m:Card
+      <c:Card
         Padding="15,10"
         Background="{DynamicResource PrimaryHueMidBrush}"
         CornerRadius="0">
@@ -75,7 +75,7 @@
 
           </StackPanel>
         </Grid>
-      </m:Card>
+      </c:Card>
 
       <!--  MAIN BODY SEND  -->
       <Grid
@@ -154,7 +154,7 @@
         Grid.Row="1"
         Margin="15"
         IsVisible="{Binding HasAccounts, Converter={x:Static BoolConverters.Not}, FallbackValue=False}">
-        <m:Card
+        <c:Card
           Margin="10"
           Padding="30"
           VerticalAlignment="Top">
@@ -188,7 +188,7 @@
 
           </StackPanel>
 
-        </m:Card>
+        </c:Card>
 
       </Grid>
     </Grid>
@@ -196,7 +196,7 @@
     <!--  SENDING & SENT COMPLETED POPUP  -->
     <Border Background="{DynamicResource PrimaryHueMidBrush}" IsVisible="{Binding SendClicked, FallbackValue=True}">
       <Grid RowDefinitions="*">
-        <m:FloatingButton
+        <c:FloatingButton
           Margin="0,20,20,0"
           HorizontalAlignment="Right"
           VerticalAlignment="Top"
@@ -217,7 +217,7 @@
                 Kind="Close" />
             </Viewbox>
           </Button.Content>
-        </m:FloatingButton>
+        </c:FloatingButton>
         <!--  SENDING  -->
         <StackPanel
           Grid.Row="1"

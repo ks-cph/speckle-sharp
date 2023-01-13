@@ -5,7 +5,7 @@
   xmlns:assists="clr-namespace:Material.Styles.Assists;assembly=Material.Styles"
   xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
   xmlns:icons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
-  xmlns:m="clr-namespace:Material.Styles;assembly=Material.Styles"
+  xmlns:c="clr-namespace:Material.Styles.Controls;assembly=Material.Styles"
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
   d:DesignHeight="450"
   d:DesignWidth="400"
@@ -18,7 +18,7 @@
       </Transitions>
     </Grid.Transitions>
     <Border Background="{DynamicResource MaterialDesignCardBackground}" Opacity="0.8" />
-    <m:Card
+    <c:Card
       MinHeight="100"
       Margin="40"
       Padding="0"
@@ -50,7 +50,7 @@
 
 
         <!--  BRANCH SELECTOR  -->
-        <m:Card
+        <c:Card
           Grid.Row="3"
           Margin="10"
           IsVisible="{Binding StreamSelector.SelectedStream, Converter={x:Static ObjectConverters.IsNotNull}}">
@@ -88,7 +88,7 @@
                 IsLightDismissEnabled="False"
                 IsOpen="{Binding #SearchBox.IsKeyboardFocusWithin}">
 
-                <m:Card Margin="0,0" CornerRadius="0">
+                <c:Card Margin="0,0" CornerRadius="0">
                   <StackPanel Orientation="Vertical">
 
                     <ListBox
@@ -112,7 +112,7 @@
                   </StackPanel>
 
 
-                </m:Card>
+                </c:Card>
               </Popup>
 
 
@@ -140,7 +140,7 @@
 
 
 
-        </m:Card>
+        </c:Card>
         <StackPanel
           Grid.Row="4"
           Margin="15"
@@ -159,7 +159,7 @@
 
         </StackPanel>
       </Grid>
-    </m:Card>
+    </c:Card>
   </Grid>
 
 

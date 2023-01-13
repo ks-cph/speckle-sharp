@@ -200,6 +200,7 @@ namespace DesktopUI2.ViewModels
       {
         this.RaiseAndSetIfChanged(ref _accounts, value);
         this.RaisePropertyChanged("HasAccounts");
+        this.RaisePropertyChanged("HasOneAccount");
         this.RaisePropertyChanged("Avatar");
       }
     }
@@ -207,6 +208,11 @@ namespace DesktopUI2.ViewModels
     public bool HasAccounts
     {
       get => Accounts != null && Accounts.Any();
+    }
+
+    public bool HasOneAccount
+    {
+      get => Accounts != null && Accounts.Count == 1;
     }
 
     private List<Client> _subscribedClientsStreamAddRemove = new List<Client>();
@@ -795,7 +801,7 @@ namespace DesktopUI2.ViewModels
 
 
 
-    private async void OpenStreamCommand(object streamAccountWrapper)
+    public async void OpenStreamCommand(object streamAccountWrapper)
     {
       if (await CheckIsOffline())
         return;

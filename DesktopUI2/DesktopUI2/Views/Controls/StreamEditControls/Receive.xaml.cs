@@ -20,8 +20,8 @@ namespace DesktopUI2.Views.Controls.StreamEditControls
       ImageBasic = this.FindControl<Image>("ImageBasic");
 
       PreviewBox360.PointerMoved += PreviewBox360_PointerMoved;
-      PreviewBox360.PointerEnter += PreviewBox360_PointerEnter;
-      PreviewBox360.PointerLeave += PreviewBox360_PointerLeave;
+      PreviewBox360.PointerEntered += PreviewBox360_PointerEnter;
+      PreviewBox360.PointerExited += PreviewBox360_PointerLeave;
 
     }
 

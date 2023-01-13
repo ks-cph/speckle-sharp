@@ -13,7 +13,7 @@ namespace DesktopUI2.ViewModels
     public IScreen HostScreen { get; }
     public string UrlPathSegment { get; } = "settings";
 
-    public ReactiveCommand<Unit, Unit> GoBack => MainViewModel.RouterInstance.NavigateBack;
+    public ReactiveCommand<Unit, IRoutableViewModel> GoBack => MainViewModel.RouterInstance.NavigateBack;
 
     private StreamViewModel _streamViewModel;
 

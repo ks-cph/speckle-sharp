@@ -3,11 +3,11 @@
   xmlns="https://github.com/avaloniaui"
   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
   xmlns:assists="clr-namespace:Material.Styles.Assists;assembly=Material.Styles"
-  xmlns:c="clr-namespace:DesktopUI2.Views.Controls"
+  xmlns:c="clr-namespace:Material.Styles.Controls;assembly=Material.Styles"
+  xmlns:cc="clr-namespace:DesktopUI2.Views.Controls"
   xmlns:conv="clr-namespace:DesktopUI2.Views.Converters"
   xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
   xmlns:icons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
-  xmlns:m="clr-namespace:Material.Styles;assembly=Material.Styles"
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
   xmlns:p="clr-namespace:DesktopUI2.Views.Pages"
   xmlns:reactiveUi="http://reactiveui.net"
@@ -22,7 +22,7 @@
       assists:ShadowAssist.ShadowDepth="Depth2"
       Background="{DynamicResource PrimaryHueMidBrush}">
       <Grid Margin="15" ColumnDefinitions="auto,*,auto, auto">
-        <m:FloatingButton
+        <c:FloatingButton
           VerticalAlignment="Center"
           assists:ShadowAssist.ShadowDepth="0"
           Background="Transparent"
@@ -41,7 +41,7 @@
                 Kind="ChevronLeft" />
             </Viewbox>
           </Button.Content>
-        </m:FloatingButton>
+        </c:FloatingButton>
         <TextBlock
           Grid.Column="1"
           Margin="15,0,0,0"
@@ -55,7 +55,7 @@
       </Grid>
     </Border>
 
-    <c:CollaboratorsControl Grid.Row="1" Margin="15" />
+    <cc:CollaboratorsControl Grid.Row="1" Margin="15" />
   </Grid>
 
 </UserControl>

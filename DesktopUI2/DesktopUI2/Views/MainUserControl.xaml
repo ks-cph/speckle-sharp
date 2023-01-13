@@ -3,13 +3,11 @@
   xmlns="https://github.com/avaloniaui"
   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
   xmlns:assists="clr-namespace:Material.Styles.Assists;assembly=Material.Styles"
-  xmlns:c="using:DesktopUI2.Views.Controls"
+  xmlns:c="clr-namespace:Material.Styles.Controls;assembly=Material.Styles"
   xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-  xmlns:m="clr-namespace:Material.Styles;assembly=Material.Styles"
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
   xmlns:mo="using:DesktopUI2.Models"
   xmlns:reactiveUi="http://reactiveui.net"
-  xmlns:styles="clr-namespace:Material.Styles;assembly=Material.Styles"
   xmlns:vm="using:DesktopUI2.ViewModels"
   d:DesignHeight="500"
   d:DesignWidth="400"
@@ -44,14 +42,14 @@
           </Transitions>
         </Grid.Transitions>
         <Border Background="{DynamicResource MaterialDesignCardBackground}" Opacity="0.8" />
-        <styles:Card
+        <c:Card
           MinHeight="100"
           Margin="40"
           Padding="0"
           VerticalAlignment="Center"
           assists:ShadowAssist.ShadowDepth="10">
           <ContentControl Content="{Binding DialogBody}" />
-        </styles:Card>
+        </c:Card>
       </Grid>
       <!--  NOTIFICATION MANAGER  -->
       <mo:NotificationManager

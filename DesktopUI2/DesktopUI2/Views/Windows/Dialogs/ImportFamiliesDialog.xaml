@@ -5,7 +5,7 @@
   xmlns:assists="clr-namespace:Material.Styles.Assists;assembly=Material.Styles"
   xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
   xmlns:icons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
-  xmlns:m="clr-namespace:Material.Styles;assembly=Material.Styles"
+  xmlns:c="clr-namespace:Material.Styles.Controls;assembly=Material.Styles"
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
   xmlns:vm="clr-namespace:DesktopUI2.ViewModels"
   d:DesignHeight="550"
@@ -108,7 +108,7 @@
               Grid.Column="1"
               Margin="5,7,5,5"
               Padding="0"
-              assists:TextFieldAssist.CornerRadius="32"
+              CornerRadius="32"
               BorderBrush="{Binding $self.Foreground}"
               BorderThickness="1"
               Classes="Solo"
@@ -116,7 +116,7 @@
               Watermark="Search types">
               <TextBox.InnerRightContent>
                 <StackPanel Orientation="Horizontal">
-                  <m:FloatingButton
+                  <c:FloatingButton
                     Grid.Column="1"
                     VerticalAlignment="Center"
                     assists:ShadowAssist.ShadowDepth="Depth0"
@@ -133,7 +133,7 @@
                         Foreground="{DynamicResource MaterialDesignBody}"
                         Kind="CloseCircle" />
                     </Button.Content>
-                  </m:FloatingButton>
+                  </c:FloatingButton>
                 </StackPanel>
 
               </TextBox.InnerRightContent>
@@ -154,7 +154,7 @@
               <ItemsControl.ItemTemplate>
                 <DataTemplate>
                   <Grid>
-                    <m:ColorZone
+                    <c:ColorZone
                       Margin="5,0,5,5"
                       HorizontalAlignment="Left"
                       assists:ShadowAssist.ShadowDepth="Depth0"
@@ -186,7 +186,7 @@
                         TextTrimming="CharacterEllipsis"
                         Text="{Binding FamilyName}"/>-->
                       </Grid>
-                    </m:ColorZone>
+                    </c:ColorZone>
                   </Grid>
                 </DataTemplate>
               </ItemsControl.ItemTemplate>
@@ -220,7 +220,7 @@
           <ItemsControl.ItemTemplate>
             <DataTemplate>
               <Grid>
-                <m:ColorZone
+                <c:ColorZone
                   Margin="5,5,5,0"
                   HorizontalAlignment="Left"
                   assists:ShadowAssist.ShadowDepth="Depth0"
@@ -247,7 +247,7 @@
                       Text="{Binding Name}"
                       TextWrapping="Wrap" />
                   </Grid>
-                </m:ColorZone>
+                </c:ColorZone>
               </Grid>
             </DataTemplate>
           </ItemsControl.ItemTemplate>

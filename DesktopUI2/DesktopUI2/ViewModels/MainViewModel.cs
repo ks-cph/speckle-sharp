@@ -22,7 +22,7 @@ namespace DesktopUI2.ViewModels
 
     public static RoutingState RouterInstance { get; private set; }
 
-    public ReactiveCommand<Unit, Unit> GoBack => Router.NavigateBack;
+    public ReactiveCommand<Unit, IRoutableViewModel> GoBack => Router.NavigateBack;
 
     public static MainViewModel Instance { get; private set; }
 
@@ -143,13 +143,7 @@ namespace DesktopUI2.ViewModels
         return;
 
       var materialTheme = Application.Current.LocateMaterialTheme<MaterialThemeBase>();
-      var theme = materialTheme.CurrentTheme;
-
-      if (isDark)
-        theme.SetBaseTheme(Theme.Light);
-      else
-        theme.SetBaseTheme(Theme.Dark);
-
+      var theme = Theme.Create(isDark ? Theme.Light : Theme.Dark, App.Primary, App.Accent);
       materialTheme.CurrentTheme = theme;
     }
 

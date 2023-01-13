@@ -135,15 +135,15 @@ namespace DesktopUI2.Models
       notificationControl.Close();
     }
 
-    protected override void OnPropertyChanged<T>(AvaloniaPropertyChangedEventArgs<T> change)
-    {
-      base.OnPropertyChanged(change);
+    //protected override void OnPropertyChanged<T>(AvaloniaPropertyChangedEventArgs<T> change)
+    //{
+    //  base.OnPropertyChanged(change);
 
-      if (change.Property == PositionProperty)
-      {
-        UpdatePseudoClasses(change.NewValue.GetValueOrDefault<NotificationPosition>());
-      }
-    }
+    //  if (change.Property == PositionProperty)
+    //  {
+    //    UpdatePseudoClasses(change.NewValue.GetValueOrDefault<NotificationPosition>());
+    //  }
+    //}
 
     private void UpdatePseudoClasses(NotificationPosition position)
     {

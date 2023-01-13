@@ -4,10 +4,10 @@
   xmlns:animations="clr-namespace:Material.Styles.Additional.Animations;assembly=Material.Styles"
   xmlns:assists="clr-namespace:Material.Styles.Assists;assembly=Material.Styles"
   xmlns:avalonia="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
+  xmlns:c="clr-namespace:Material.Styles.Controls;assembly=Material.Styles"
   xmlns:controls="clr-namespace:Material.Styles.Controls;assembly=Material.Styles"
   xmlns:converters="clr-namespace:Material.Styles.Converters;assembly=Material.Styles"
   xmlns:extensions="clr-namespace:Material.Styles.Controls.Extensions;assembly=Material.Styles"
-  xmlns:styles="clr-namespace:Material.Styles;assembly=Material.Styles"
   xmlns:wpf="clr-namespace:Material.Styles.Assists;assembly=Material.Styles">
   <Design.PreviewWith>
     <Border
@@ -83,7 +83,7 @@
     <Setter Property="Margin" Value="20,0,20,20" />
     <Setter Property="FontStyle" Value="Italic" />
   </Style>
-  <Style Selector="TextBox.Readonly /template/ styles|MaterialUnderline#PART_Underline">
+  <Style Selector="TextBox.Readonly /template/ c|MaterialUnderline#PART_Underline">
     <Setter Property="IsVisible" Value="False" />
   </Style>
 

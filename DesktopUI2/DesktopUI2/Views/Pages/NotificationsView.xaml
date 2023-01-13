@@ -6,7 +6,7 @@
   xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
   xmlns:dvm="clr-namespace:DesktopUI2.ViewModels.DesignViewModels"
   xmlns:icons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
-  xmlns:m="clr-namespace:Material.Styles;assembly=Material.Styles"
+  xmlns:c="clr-namespace:Material.Styles.Controls;assembly=Material.Styles"
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
   d:DesignHeight="450"
   d:DesignWidth="400"
@@ -21,7 +21,7 @@
       assists:ShadowAssist.ShadowDepth="Depth2"
       Background="{DynamicResource PrimaryHueMidBrush}">
       <Grid Margin="15" ColumnDefinitions="auto,*,auto, auto">
-        <m:FloatingButton
+        <c:FloatingButton
           VerticalAlignment="Center"
           assists:ShadowAssist.ShadowDepth="0"
           Background="Transparent"
@@ -40,7 +40,7 @@
                 Kind="ChevronLeft" />
             </Viewbox>
           </Button.Content>
-        </m:FloatingButton>
+        </c:FloatingButton>
         <TextBlock
           Grid.Column="1"
           Margin="15,0,0,0"
@@ -68,7 +68,7 @@
         <ItemsControl Margin="0,0,0,10" Items="{Binding Notifications}">
           <ItemsControl.ItemTemplate>
             <DataTemplate>
-              <m:Card Margin="15,10">
+              <c:Card Margin="15,10">
                 <Grid ColumnDefinitions="auto,*,auto">
                   <icons:MaterialIcon
                     Width="20"
@@ -95,7 +95,7 @@
                     Text="{Binding Message}"
                     TextWrapping="Wrap" />
 
-                  <m:FloatingButton
+                  <c:FloatingButton
                     Grid.Column="2"
                     VerticalAlignment="Center"
                     Command="{Binding LaunchCommand, FallbackValue={x:Null}}"
@@ -107,9 +107,9 @@
                         Foreground="White"
                         Kind="OpenInNew" />
                     </Button.Content>
-                  </m:FloatingButton>
+                  </c:FloatingButton>
                 </Grid>
-              </m:Card>
+              </c:Card>
             </DataTemplate>
           </ItemsControl.ItemTemplate>
 

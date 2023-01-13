@@ -1,9 +1,9 @@
 ﻿<Styles
   xmlns="https://github.com/avaloniaui"
   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:c="clr-namespace:Material.Styles.Controls;assembly=Material.Styles"
   xmlns:conv="clr-namespace:Avalonia.Controls.Converters;assembly=Avalonia.Controls"
   xmlns:icons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
-  xmlns:m="clr-namespace:Material.Styles;assembly=Material.Styles"
   xmlns:ripple="clr-namespace:Material.Ripple;assembly=Material.Ripple"
   xmlns:sys="clr-namespace:System;assembly=netstandard">
   <Design.PreviewWith>
@@ -122,7 +122,7 @@
                   IsOpen="{TemplateBinding IsSubMenuOpen,
                                            Mode=TwoWay}"
                   PlacementMode="Right">
-                  <m:Card Padding="0">
+                  <c:Card Padding="0">
                     <Border Name="PART_MainBorder" BorderThickness="{TemplateBinding BorderThickness}">
                       <ScrollViewer>
                         <ItemsPresenter
@@ -133,7 +133,7 @@
                           ItemsPanel="{TemplateBinding ItemsPanel}" />
                       </ScrollViewer>
                     </Border>
-                  </m:Card>
+                  </c:Card>
                 </Popup>
               </Grid>
             </ripple:RippleEffect>
@@ -198,7 +198,7 @@
               IsOpen="{TemplateBinding IsSubMenuOpen,
                                        Mode=TwoWay}"
               WindowManagerAddShadowHint="False">
-              <m:Card Margin="8" Padding="0">
+              <c:Card Margin="8" Padding="0">
                 <Border Name="MainBorder" BorderThickness="{TemplateBinding BorderThickness}">
                   <ScrollViewer>
                     <ItemsPresenter
@@ -209,7 +209,7 @@
                       ItemsPanel="{TemplateBinding ItemsPanel}" />
                   </ScrollViewer>
                 </Border>
-              </m:Card>
+              </c:Card>
             </Popup>
           </Panel>
         </Border>

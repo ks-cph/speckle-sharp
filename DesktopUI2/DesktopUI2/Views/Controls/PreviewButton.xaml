@@ -5,7 +5,7 @@
   xmlns:assists="clr-namespace:Material.Styles.Assists;assembly=Material.Styles"
   xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
   xmlns:icons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
-  xmlns:m="clr-namespace:Material.Styles;assembly=Material.Styles"
+  xmlns:c="clr-namespace:Material.Styles.Controls;assembly=Material.Styles"
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
   mc:Ignorable="d">
   <UserControl.Styles>
@@ -14,7 +14,7 @@
     </Style>
   </UserControl.Styles>
   <Grid>
-    <m:FloatingButton
+    <c:FloatingButton
       VerticalAlignment="Center"
       assists:ShadowAssist.ShadowDepth="Depth0"
       Background="Transparent"
@@ -42,7 +42,7 @@
             Kind="LightbulbOutline" />
         </Panel>
       </Button.Content>
-    </m:FloatingButton>
+    </c:FloatingButton>
 
     <Grid>
       <ProgressBar
@@ -53,7 +53,7 @@
         IsVisible="{Binding Progress.IsPreviewProgressing, FallbackValue=False}"
         Maximum="{Binding Progress.Max}"
         Value="{Binding Progress.Value}" />
-      <m:FloatingButton
+      <c:FloatingButton
         assists:ButtonAssist.HoverColor="Transparent"
         assists:ShadowAssist.ShadowDepth="0"
         Background="Transparent"
@@ -68,7 +68,7 @@
             Foreground="{DynamicResource PrimaryHueDarkBrush}"
             Kind="Close" />
         </Button.Content>
-      </m:FloatingButton>
+      </c:FloatingButton>
     </Grid>
 
   </Grid>

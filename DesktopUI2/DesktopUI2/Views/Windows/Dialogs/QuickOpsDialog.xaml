@@ -9,7 +9,6 @@
   Width="450"
   assists:ShadowAssist.ShadowDepth="10"
   Background="{DynamicResource PrimaryHueMidBrush}"
-  HasSystemDecorations="False"
   SizeToContent="Height"
   mc:Ignorable="d">
   <Grid RowDefinitions="auto, auto, auto, auto">

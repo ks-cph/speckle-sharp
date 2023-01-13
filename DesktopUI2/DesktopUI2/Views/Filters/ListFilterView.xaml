@@ -17,10 +17,10 @@
       Grid.Row="1"
       Margin="0,8"
       Padding="0"
-      assists:TextFieldAssist.CornerRadius="32"
       BorderBrush="{Binding $self.Foreground}"
       BorderThickness="1"
       Classes="Solo"
+      CornerRadius="32"
       Text="{Binding SearchQuery, Mode=TwoWay}"
       Watermark="Search">
       <TextBox.InnerLeftContent>

@@ -4,7 +4,7 @@
   xmlns="https://github.com/avaloniaui"
   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
   xmlns:assists="clr-namespace:Material.Styles.Assists;assembly=Material.Styles"
-  xmlns:m="clr-namespace:Material.Styles;assembly=Material.Styles">
+  xmlns:c="clr-namespace:Material.Styles.Controls;assembly=Material.Styles">
   <Design.PreviewWith>
     <StackPanel
       Width="360"
@@ -41,12 +41,12 @@
       </Expander>
     </StackPanel>
   </Design.PreviewWith>
-  <Style Selector="Expander:up:expanded /template/ m|Card#PART_ExpanderRoot, Expander:down:expanded /template/ m|Card#PART_ExpanderRoot">
+  <Style Selector="Expander:up:expanded /template/ c|Card#PART_ExpanderRoot, Expander:down:expanded /template/ c|Card#PART_ExpanderRoot">
     <Setter Property="Margin" Value="0" />
   </Style>
 
 
-  <Style Selector="Expander:not(.notransitions) /template/ m|Card#PART_ExpanderRoot">
+  <Style Selector="Expander:not(.notransitions) /template/ c|Card#PART_ExpanderRoot">
     <Setter Property="Transitions" Value="{x:Null}">
       <!--<Transitions>
         <ThicknessTransition
@@ -66,7 +66,7 @@
     <Setter Property="assists:ShadowAssist.ShadowDepth" Value="Depth0" />
   </Style>
 
-  <Style Selector="Expander.Transparent /template/ m|Card#PART_ExpanderRoot">
+  <Style Selector="Expander.Transparent /template/ c|Card#PART_ExpanderRoot">
     <Setter Property="Background" Value="Transparent" />
   </Style>
 

@@ -28,7 +28,7 @@ namespace DesktopUI2.ViewModels
 
     #region bindings
 
-    public ReactiveCommand<Unit, Unit> GoBack => MainViewModel.RouterInstance.NavigateBack;
+    public ReactiveCommand<Unit, IRoutableViewModel> GoBack => MainViewModel.RouterInstance.NavigateBack;
 
     private string _searchQuery = "";
 

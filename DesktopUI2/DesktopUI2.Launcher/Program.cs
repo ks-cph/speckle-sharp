@@ -40,7 +40,7 @@ namespace DesktopUI2.Launcher
         AvaloniaNativeLibraryPath = nativeLib
       })
       .With(new SkiaOptions { MaxGpuResourceSizeBytes = 8096000 })
-      .With(new Win32PlatformOptions { AllowEglInitialization = true, EnableMultitouch = false })
+      .With(new Win32PlatformOptions { AllowEglInitialization = true })
       .LogToTrace()
       .UseReactiveUI();
     }

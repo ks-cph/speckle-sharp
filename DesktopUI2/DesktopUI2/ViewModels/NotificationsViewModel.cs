@@ -12,7 +12,7 @@ namespace DesktopUI2.ViewModels
   {
     public IScreen HostScreen { get; }
 
-    public ReactiveCommand<Unit, Unit> GoBack => MainViewModel.RouterInstance.NavigateBack;
+    public ReactiveCommand<Unit, IRoutableViewModel> GoBack => MainViewModel.RouterInstance.NavigateBack;
 
 
     public string UrlPathSegment { get; } = "notifications";

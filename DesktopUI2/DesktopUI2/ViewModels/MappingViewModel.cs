@@ -19,7 +19,7 @@ namespace DesktopUI2.ViewModels
 
     public ConnectorBindings Bindings { get; set; }
 
-    public ReactiveCommand<Unit, Unit> GoBack => MainViewModel.RouterInstance.NavigateBack;
+    public ReactiveCommand<Unit, IRoutableViewModel> GoBack => MainViewModel.RouterInstance.NavigateBack;
 
     public const string UnmappedKey = "New Incoming Types";
     private string TypeCatMisc = "Miscellaneous"; // needs to match string in connectorRevit.Mappings

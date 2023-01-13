@@ -7,7 +7,7 @@
   xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
   xmlns:icons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
   xmlns:local="clr-namespace:DesktopUI2.Views.Pages"
-  xmlns:m="clr-namespace:Material.Styles;assembly=Material.Styles"
+  xmlns:c="clr-namespace:Material.Styles.Controls;assembly=Material.Styles"
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
   xmlns:viewModels="clr-namespace:DesktopUI2.ViewModels.DesignViewModels"
   d:DesignHeight="450"
@@ -82,7 +82,7 @@
               <Grid RowDefinitions="auto, auto, auto, auto">
                 <Image Margin="0,0,0,10" Source="{Binding Screenshot^}" />
                 <!--  VIEW  -->
-                <m:ColorZone
+                <c:ColorZone
                   Grid.Row="1"
                   Margin="0,0,0,10"
                   assists:ShadowAssist.ShadowDepth="Depth0"
@@ -112,7 +112,7 @@
                     </StackPanel>
                   </Button>
 
-                </m:ColorZone>
+                </c:ColorZone>
 
                 <ItemsControl
                   Grid.Row="2"
@@ -122,7 +122,7 @@
                   <ItemsControl.ItemTemplate>
                     <DataTemplate>
                       <Grid>
-                        <m:ColorZone
+                        <c:ColorZone
                           Grid.Row="3"
                           Margin="10,10,10,0"
                           assists:ShadowAssist.ShadowDepth="Depth0"
@@ -147,14 +147,14 @@
                               TextWrapping="Wrap" />
                           </Grid>
 
-                        </m:ColorZone>
+                        </c:ColorZone>
 
                       </Grid>
                     </DataTemplate>
                   </ItemsControl.ItemTemplate>
                 </ItemsControl>
                 <!--  REPLY  -->
-                <m:ColorZone
+                <c:ColorZone
                   Grid.Row="3"
                   Margin="0,0,0,10"
                   assists:ShadowAssist.ShadowDepth="Depth0"
@@ -183,7 +183,7 @@
                     </StackPanel>
                   </Button>
 
-                </m:ColorZone>
+                </c:ColorZone>
               </Grid>
 
             </Expander>

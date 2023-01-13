@@ -3,13 +3,13 @@
   xmlns="https://github.com/avaloniaui"
   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
   xmlns:assists="clr-namespace:Material.Styles.Assists;assembly=Material.Styles"
-  xmlns:c="clr-namespace:DesktopUI2.Views.Controls"
+  xmlns:c="clr-namespace:Material.Styles.Controls;assembly=Material.Styles"
+  xmlns:cc="clr-namespace:DesktopUI2.Views.Controls"
   xmlns:conv="clr-namespace:DesktopUI2.Views.Converters"
   xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
   xmlns:dvm="clr-namespace:DesktopUI2.ViewModels.DesignViewModels"
   xmlns:icons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
   xmlns:local="clr-namespace:DesktopUI2.Views.Pages"
-  xmlns:m="clr-namespace:Material.Styles;assembly=Material.Styles"
   xmlns:map="clr-namespace:DesktopUI2.Views.Mappings.Controls"
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
   xmlns:ripple="clr-namespace:Material.Ripple;assembly=Material.Ripple"
@@ -89,7 +89,7 @@
                 Margin="10"
                 Orientation="Vertical"
                 Spacing="10">
-                <m:Card Padding="0">
+                <c:Card Padding="0">
                   <!--  NEW MAPPINGS  -->
                   <StackPanel Orientation="Vertical">
                     <ProgressBar IsIndeterminate="True" IsVisible="{Binding ShowProgress, FallbackValue=True}" />
@@ -244,10 +244,10 @@
 
                     </StackPanel>
                   </StackPanel>
-                </m:Card>
+                </c:Card>
 
                 <!--  EXISTING MAPPINGS  -->
-                <m:Card Padding="15" IsVisible="{Binding ExistingSchemas.Count}">
+                <c:Card Padding="15" IsVisible="{Binding ExistingSchemas.Count}">
                   <StackPanel Orientation="Vertical">
                     <StackPanel Orientation="Horizontal">
                       <icons:MaterialIcon
@@ -268,8 +268,8 @@
                         <DataTemplate>
                           <Expander
                             Classes="Minimal Transparent"
-                            PointerEnter="PointerEnterEvent"
-                            PointerLeave="PointerLeaveEvent">
+                            PointerEntered="PointerEnterEvent"
+                            PointerExited="PointerLeaveEvent">
                             <Expander.Header>
                               <StackPanel Orientation="Horizontal">
                                 <TextBlock Text="{Binding Name}" />
@@ -305,8 +305,8 @@
                                       Grid.ColumnSpan="2"
                                       Background="{DynamicResource MaterialDesignCardBackground}"
                                       Opacity="0.01"
-                                      PointerEnter="PointerEnterEventItem"
-                                      PointerLeave="PointerLeaveEvent" />
+                                      PointerEntered="PointerEnterEventItem"
+                                      PointerExited="PointerLeaveEvent" />
 
                                   </Grid>
 
@@ -333,7 +333,7 @@
                     </StackPanel>
 
                   </StackPanel>
-                </m:Card>
+                </c:Card>
 
 
               </StackPanel>
@@ -359,7 +359,7 @@
       </Grid>
 
       <!--  STREAM SELECTOR  -->
-      <c:StreamSelector DataContext="{Binding StreamSelector}" IsVisible="{Binding IsVisible, FallbackValue=False}" />
+      <cc:StreamSelector DataContext="{Binding StreamSelector}" IsVisible="{Binding IsVisible, FallbackValue=False}" />
     </Grid>
   </ContentControl>
 </UserControl>

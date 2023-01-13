@@ -10,7 +10,6 @@
   assists:ShadowAssist.ShadowDepth="10"
   d:DesignWidth="400"
   Background="{DynamicResource PrimaryHueMidBrush}"
-  HasSystemDecorations="False"
   SizeToContent="Height"
   mc:Ignorable="d">
   <StackPanel

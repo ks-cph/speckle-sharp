@@ -2,8 +2,8 @@
   xmlns="https://github.com/avaloniaui"
   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
   xmlns:assists="clr-namespace:Material.Styles.Assists;assembly=Material.Styles"
-  xmlns:icons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
-  xmlns:m="clr-namespace:Material.Styles;assembly=Material.Styles">
+  xmlns:c="clr-namespace:Material.Styles.Controls;assembly=Material.Styles"
+  xmlns:icons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia">
   <Design.PreviewWith>
     <StackPanel
       Width="360"
@@ -54,7 +54,7 @@
   <Style Selector="icons|MaterialIcon#send">
     <Setter Property="RenderTransform" Value="rotate(-30deg)" />
   </Style>
-  <Style Selector="m|FloatingButton:pointerover icons|MaterialIcon#send">
+  <Style Selector="c|FloatingButton:pointerover icons|MaterialIcon#send">
     <Setter Property="RenderTransform" Value="rotate(-45deg)" />
   </Style>
 
@@ -62,7 +62,7 @@
     <Setter Property="Template">
       <ControlTemplate>
         <Grid Margin="4">
-          <m:FloatingButton
+          <c:FloatingButton
             VerticalAlignment="Center"
             Command="{Binding SendCommand, FallbackValue={x:Null}}"
             IsDefault="True"
@@ -82,7 +82,7 @@
                 </icons:MaterialIcon.Transitions>
               </icons:MaterialIcon>
             </Button.Content>
-          </m:FloatingButton>
+          </c:FloatingButton>
 
           <Grid>
             <ProgressBar
@@ -94,7 +94,7 @@
               IsVisible="{Binding Progress.IsProgressing, FallbackValue=False}"
               Maximum="{Binding Progress.Max}"
               Value="{Binding Progress.Value}" />
-            <m:FloatingButton
+            <c:FloatingButton
               assists:ButtonAssist.HoverColor="Transparent"
               assists:ShadowAssist.ShadowDepth="0"
               Background="Transparent"
@@ -110,7 +110,7 @@
                   Foreground="{DynamicResource PrimaryHueDarkBrush}"
                   Kind="Close" />
               </Button.Content>
-            </m:FloatingButton>
+            </c:FloatingButton>
           </Grid>
         </Grid>
       </ControlTemplate>
@@ -211,7 +211,7 @@
   <Style Selector="icons|MaterialIcon#receive">
     <Setter Property="RenderTransform" Value="rotate(30deg) scaleX(-1)" />
   </Style>
-  <Style Selector="m|FloatingButton:pointerover icons|MaterialIcon#receive">
+  <Style Selector="c|FloatingButton:pointerover icons|MaterialIcon#receive">
     <Setter Property="RenderTransform" Value="rotate(15deg) scaleX(-1)" />
   </Style>
 
@@ -219,7 +219,7 @@
     <Setter Property="Template">
       <ControlTemplate>
         <Grid Margin="4">
-          <m:FloatingButton
+          <c:FloatingButton
             VerticalAlignment="Center"
             Command="{Binding ReceiveCommand}"
             IsDefault="True"
@@ -242,7 +242,7 @@
               </icons:MaterialIcon>
 
             </Button.Content>
-          </m:FloatingButton>
+          </c:FloatingButton>
 
           <Grid>
             <ProgressBar
@@ -254,7 +254,7 @@
               IsVisible="{Binding Progress.IsProgressing, FallbackValue=False}"
               Maximum="{Binding Progress.Max}"
               Value="{Binding Progress.Value}" />
-            <m:FloatingButton
+            <c:FloatingButton
               assists:ButtonAssist.HoverColor="Transparent"
               assists:ShadowAssist.ShadowDepth="0"
               Background="Transparent"
@@ -270,7 +270,7 @@
                   Foreground="{DynamicResource PrimaryHueDarkBrush}"
                   Kind="Close" />
               </Button.Content>
-            </m:FloatingButton>
+            </c:FloatingButton>
           </Grid>
         </Grid>
 

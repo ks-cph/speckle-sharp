@@ -4,12 +4,12 @@
   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
   xmlns:ap="clr-namespace:DesktopUI2.Views.AttachedProperties"
   xmlns:assists="clr-namespace:Material.Styles.Assists;assembly=Material.Styles"
-  xmlns:c="clr-namespace:DesktopUI2.Views.Controls"
+  xmlns:c="clr-namespace:Material.Styles.Controls;assembly=Material.Styles"
+  xmlns:cc="clr-namespace:DesktopUI2.Views.Controls"
   xmlns:conv="clr-namespace:DesktopUI2.Views.Converters"
   xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
   xmlns:icons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
   xmlns:local="clr-namespace:DesktopUI2.Views.Pages"
-  xmlns:m="clr-namespace:Material.Styles;assembly=Material.Styles"
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
   xmlns:ripple="clr-namespace:Material.Ripple;assembly=Material.Ripple"
   xmlns:vm="clr-namespace:DesktopUI2.ViewModels.DesignViewModels"
@@ -25,10 +25,10 @@
 
   <ItemsRepeater Background="Transparent" Items="{Binding SavedStreams}">
     <ItemsRepeater.Styles>
-      <Style Selector="Button.Invisible:not(:pointerover) m|FloatingButton#HoverButtons">
+      <Style Selector="Button.Invisible:not(:pointerover) c|FloatingButton#HoverButtons">
         <Setter Property="IsVisible" Value="False" />
       </Style>
-      <Style Selector="Button.Invisible:pointerover m|FloatingButton#HoverButtons">
+      <Style Selector="Button.Invisible:pointerover c|FloatingButton#HoverButtons">
         <Setter Property="IsVisible" Value="True" />
       </Style>
     </ItemsRepeater.Styles>
@@ -220,7 +220,7 @@
                   Orientation="Horizontal"
                   Spacing="5">
                   <!--  DELETE BTN  -->
-                  <m:FloatingButton
+                  <c:FloatingButton
                     Name="HoverButtons"
                     VerticalAlignment="Center"
                     assists:ShadowAssist.ShadowDepth="Depth0"
@@ -238,7 +238,7 @@
                         Kind="Delete" />
 
                     </Button.Content>
-                  </m:FloatingButton>
+                  </c:FloatingButton>
 
                   <!--  RECEIVE BTN  -->
                   <Button Classes="Receive" IsVisible="{Binding IsReceiver}" />
@@ -251,7 +251,7 @@
             </Button>
 
             <!--  DELETE BTN 2 (for disabled streams)  -->
-            <m:FloatingButton
+            <c:FloatingButton
               Grid.Column="1"
               Margin="5"
               VerticalAlignment="Center"
@@ -271,7 +271,7 @@
                   Kind="Delete" />
 
               </Button.Content>
-            </m:FloatingButton>
+            </c:FloatingButton>
           </Grid>
         </Grid>
       </DataTemplate>

@@ -3,14 +3,14 @@
   xmlns="https://github.com/avaloniaui"
   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
   xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-  xmlns:m="clr-namespace:Material.Styles;assembly=Material.Styles"
+  xmlns:c="clr-namespace:Material.Styles.Controls;assembly=Material.Styles"
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
   d:DesignHeight="650"
   d:DesignWidth="400"
   mc:Ignorable="d">
   <Grid RowDefinitions="auto, *">
     <!--  HEADER  -->
-    <m:Card
+    <c:Card
       Padding="15,10"
       Background="{DynamicResource PrimaryHueMidBrush}"
       CornerRadius="0">
@@ -42,11 +42,11 @@
           Orientation="Horizontal"
           Spacing="6" />
       </Grid>
-    </m:Card>
+    </c:Card>
 
     <!--  NO ACCOUNTS / LOG IN  -->
     <Grid Grid.Row="1" Margin="15">
-      <m:Card
+      <c:Card
         Margin="10"
         Padding="30"
         VerticalAlignment="Top">
@@ -95,7 +95,7 @@
           </StackPanel>
         </StackPanel>
 
-      </m:Card>
+      </c:Card>
 
     </Grid>
   </Grid>

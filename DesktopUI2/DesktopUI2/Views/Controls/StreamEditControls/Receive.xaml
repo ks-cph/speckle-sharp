@@ -3,10 +3,10 @@
   xmlns="https://github.com/avaloniaui"
   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
   xmlns:assists="clr-namespace:Material.Styles.Assists;assembly=Material.Styles"
-  xmlns:c="clr-namespace:DesktopUI2.Views.Controls"
+  xmlns:c="clr-namespace:Material.Styles.Controls;assembly=Material.Styles"
+  xmlns:cc="clr-namespace:DesktopUI2.Views.Controls"
   xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
   xmlns:icons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
-  xmlns:m="clr-namespace:Material.Styles;assembly=Material.Styles"
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
   xmlns:viewModels="clr-namespace:DesktopUI2.ViewModels"
   d:DesignHeight="650"
@@ -16,7 +16,7 @@
     <Style Selector="icons|MaterialIcon#receive">
       <Setter Property="RenderTransform" Value="rotate(30deg) scaleX(-1)" />
     </Style>
-    <Style Selector="m|FloatingButton:pointerover icons|MaterialIcon#receive">
+    <Style Selector="c|FloatingButton:pointerover icons|MaterialIcon#receive">
       <Setter Property="RenderTransform" Value="rotate(15deg) scaleX(-1)" />
     </Style>
   </UserControl.Styles>
@@ -190,7 +190,7 @@
     </Grid>
 
     <!--  NO COMMIT INFO  -->
-    <m:Card
+    <c:Card
       Margin="10"
       HorizontalContentAlignment="Stretch"
       Classes="Mini">
@@ -217,7 +217,7 @@
           </Viewbox>
         </Grid>
       </StackPanel>
-    </m:Card>
+    </c:Card>
     <!--  RECEIVE BTN  -->
     <Button Margin="0,5,0,20" Classes="ReceiveFull" />
     <Grid
@@ -237,7 +237,7 @@
         Orientation="Horizontal"
         Spacing="10">
         <!--  SAVE BTN  -->
-        <m:FloatingButton
+        <c:FloatingButton
           VerticalAlignment="Center"
           assists:ShadowAssist.ShadowDepth="Depth0"
           Background="Transparent"
@@ -253,10 +253,10 @@
               Kind="ContentSave" />
 
           </Button.Content>
-        </m:FloatingButton>
+        </c:FloatingButton>
 
         <!--  PREVIEW BTN  -->
-        <c:PreviewButton />
+        <cc:PreviewButton />
 
 
       </StackPanel>

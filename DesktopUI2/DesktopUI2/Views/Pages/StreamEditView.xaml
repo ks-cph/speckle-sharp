@@ -3,12 +3,12 @@
   xmlns="https://github.com/avaloniaui"
   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
   xmlns:assists="clr-namespace:Material.Styles.Assists;assembly=Material.Styles"
-  xmlns:c="clr-namespace:DesktopUI2.Views.Controls"
+  xmlns:c="clr-namespace:Material.Styles.Controls;assembly=Material.Styles"
+  xmlns:cc="clr-namespace:DesktopUI2.Views.Controls"
   xmlns:conv="clr-namespace:DesktopUI2.Views.Converters"
   xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
   xmlns:dataTemplates="using:DesktopUI2.Views.DataTemplates"
   xmlns:icons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
-  xmlns:m="clr-namespace:Material.Styles;assembly=Material.Styles"
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
   xmlns:uc="clr-namespace:DesktopUI2.Views.Controls.StreamEditControls"
   xmlns:viewModels="clr-namespace:DesktopUI2.ViewModels.DesignViewModels"
@@ -38,7 +38,7 @@
       assists:ShadowAssist.ShadowDepth="Depth2"
       Background="{DynamicResource PrimaryHueMidBrush}">
       <Grid Margin="15" ColumnDefinitions="auto,*,auto, auto">
-        <m:FloatingButton
+        <c:FloatingButton
           VerticalAlignment="Center"
           assists:ShadowAssist.ShadowDepth="0"
           Background="Transparent"
@@ -58,7 +58,7 @@
             </Viewbox>
           </Button.Content>
 
-        </m:FloatingButton>
+        </c:FloatingButton>
         <Grid
           Grid.Column="1"
           Margin="15,0,0,0"
@@ -69,8 +69,8 @@
             Foreground="White"
             Text="{Binding Stream.name}"
             TextTrimming="CharacterEllipsis" />
-          <c:StreamDetails Grid.Row="1">
-            <c:StreamDetails.Styles>
+          <cc:StreamDetails Grid.Row="1">
+            <cc:StreamDetails.Styles>
               <Style Selector="TextBlock">
                 <Setter Property="Foreground" Value="White" />
               </Style>
@@ -78,8 +78,8 @@
                 <Setter Property="Foreground" Value="White" />
               </Style>
 
-            </c:StreamDetails.Styles>
-          </c:StreamDetails>
+            </cc:StreamDetails.Styles>
+          </cc:StreamDetails>
         </Grid>
         <!--  THREE DOTS  -->
         <Menu Grid.Column="3" Items="{Binding MenuItems}">
@@ -198,7 +198,7 @@
             Classes="SpeckleFont"
             FontSize="18"
             Text="Collaborators" />
-          <c:CollaboratorsControl
+          <cc:CollaboratorsControl
             Grid.Row="1"
             Margin="10,0,10,10"
             Padding="5"
@@ -281,7 +281,7 @@
               TextWrapping="Wrap" />
 
             <!--  SEARCH AND FILTER  -->
-            <m:Card
+            <c:Card
               Grid.Row="1"
               Grid.Column="0"
               Margin="5,10,5,10"
@@ -296,7 +296,7 @@
                 Text="{Binding SearchQuery}"
                 Watermark="Search items">
                 <TextBox.InnerRightContent>
-                  <m:FloatingButton
+                  <c:FloatingButton
                     VerticalAlignment="Center"
                     assists:ShadowAssist.ShadowDepth="Depth0"
                     Background="Transparent"
@@ -312,7 +312,7 @@
                         Foreground="{DynamicResource MaterialDesignBody}"
                         Kind="CloseCircle" />
                     </Button.Content>
-                  </m:FloatingButton>
+                  </c:FloatingButton>
                 </TextBox.InnerRightContent>
                 <TextBox.InnerLeftContent>
                   <icons:MaterialIcon
@@ -322,8 +322,8 @@
                     Kind="Search" />
                 </TextBox.InnerLeftContent>
               </TextBox>
-            </m:Card>
-            <m:FloatingButton
+            </c:Card>
+            <c:FloatingButton
               Grid.Row="1"
               Grid.Column="1"
               HorizontalAlignment="Right"
@@ -341,7 +341,7 @@
                   Foreground="Gray"
                   Kind="ContentCopy" />
               </Button.Content>
-            </m:FloatingButton>
+            </c:FloatingButton>
 
             <ListBox
               Grid.Row="2"

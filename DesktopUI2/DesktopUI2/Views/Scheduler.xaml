@@ -5,7 +5,7 @@
   xmlns:assists="clr-namespace:Material.Styles.Assists;assembly=Material.Styles"
   xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
   xmlns:icons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
-  xmlns:m="clr-namespace:Material.Styles;assembly=Material.Styles"
+  xmlns:c="clr-namespace:Material.Styles.Controls;assembly=Material.Styles"
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
   xmlns:p="clr-namespace:DesktopUI2.Views.Pages"
   xmlns:reactiveUi="http://reactiveui.net"
@@ -16,7 +16,7 @@
   SizeToContent="Height"
   mc:Ignorable="d">
   <Grid RowDefinitions="auto, *">
-    <m:Card Padding="10,7" CornerRadius="0">
+    <c:Card Padding="10,7" CornerRadius="0">
       <Grid ColumnDefinitions="auto,*">
         <StackPanel
           VerticalAlignment="Bottom"
@@ -35,7 +35,7 @@
             Text="{Binding Title}" />
         </StackPanel>
       </Grid>
-    </m:Card>
+    </c:Card>
 
     <Grid
       Grid.Row="1"
@@ -43,7 +43,7 @@
       ColumnDefinitions="Auto,*"
       RowDefinitions="auto, auto, auto, auto, *, auto">
 
-      <m:Card
+      <c:Card
         Grid.ColumnSpan="2"
         Margin="0,15"
         VerticalAlignment="Stretch"
@@ -57,7 +57,7 @@
             Text="⚠ Please save a Sender Stream form the main Connector UI to continue."
             TextWrapping="Wrap" />
         </StackPanel>
-      </m:Card>
+      </c:Card>
 
       <StackPanel
         Grid.Row="1"
@@ -157,7 +157,7 @@
       </ComboBox>
 
 
-      <!--<m:Card
+      <!--<c:Card
         Grid.Row="3"
         Grid.ColumnSpan="2"
         Margin="0,15"
@@ -172,7 +172,7 @@
 
           <Image Source="{Binding PreviewImage}" />
         </StackPanel>
-      </m:Card>-->
+      </c:Card>-->
 
       <StackPanel
         Grid.Row="5"
