@@ -622,7 +622,7 @@ namespace DesktopUI2.ViewModels
       }
     }
 
-    private void RemoveSavedStream(string stateId)
+    public void RemoveSavedStream(string stateId)
     {
       try
       {
@@ -815,7 +815,7 @@ namespace DesktopUI2.ViewModels
     }
 
 
-    private async void OpenSavedStreamCommand(object streamViewModel)
+    public async void OpenSavedStreamCommand(object streamViewModel)
     {
       if (await CheckIsOffline())
         return;
@@ -858,7 +858,7 @@ namespace DesktopUI2.ViewModels
       Refresh();
     }
 
-    private void OneClickModeCommand()
+    public void OneClickModeCommand()
     {
       var config = ConfigManager.Load();
       config.OneClickMode = true;
@@ -867,7 +867,7 @@ namespace DesktopUI2.ViewModels
       MainViewModel.Instance.NavigateToDefaultScreen();
     }
 
-    private void NotificationsCommand()
+    public void NotificationsCommand()
     {
       MainViewModel.RouterInstance.Navigate.Execute(new NotificationsViewModel(HostScreen, Notifications.ToList()));
     }

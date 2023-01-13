@@ -148,7 +148,7 @@
           <TextBox
             Margin="0"
             Padding="0"
-            Classes="Solo Small"
+            Classes="solo small"
             Text="{Binding SearchQuery}"
             Watermark="Search streams">
             <TextBox.InnerRightContent>

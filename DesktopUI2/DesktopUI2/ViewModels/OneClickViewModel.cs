@@ -234,14 +234,14 @@ namespace DesktopUI2.ViewModels
       return stream;
     }
 
-    private void ShareCommand()
+    public void ShareCommand()
     {
       MainViewModel.RouterInstance.Navigate.Execute(new CollaboratorsViewModel(HostScreen, new StreamViewModel(_fileStream, HostScreen, null)));
 
       Analytics.TrackEvent(Analytics.Events.DUIAction, new Dictionary<string, object>() { { "name", "Share Open" } });
     }
 
-    private void CloseSendModal()
+    public void CloseSendModal()
     {
       if (Progress.IsProgressing)
       {
@@ -250,19 +250,19 @@ namespace DesktopUI2.ViewModels
       SendClicked = false;
     }
 
-    private void ViewOnlineCommand()
+    public void ViewOnlineCommand()
     {
 
 
       Process.Start(new ProcessStartInfo(Url) { UseShellExecute = true });
     }
 
-    private void CopyCommand()
+    public void CopyCommand()
     {
       Avalonia.Application.Current.Clipboard.SetTextAsync(Url);
     }
 
-    private void AdvancedModeCommand()
+    public void AdvancedModeCommand()
     {
       var config = ConfigManager.Load();
       config.OneClickMode = false;

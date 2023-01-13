@@ -32,6 +32,13 @@
         </TextBox>
 
         <TextBox
+          Margin="0"
+          Padding="0"
+          Classes="Solo Small"
+          Text=""
+          Watermark="Search streams" />
+
+        <TextBox
           assists:TextFieldAssist.Label="Classic TextBox"
           FontSize="13"
           UseFloatingWatermark="True" />
@@ -41,8 +48,7 @@
           Padding="0"
           Background="Red"
           Classes="Solo Small"
-          Text="{Binding SearchQuery}"
-          Watermark="Search streams">
+          Text="{Binding SearchQuery}">
           <TextBox.InnerRightContent>
             <Button
               Width="{Binding $self.Bounds.Height}"
@@ -78,6 +84,24 @@
   <Style Selector="TextBox.Filled /template/ Border#PART_RootBorder">
     <Setter Property="MinHeight" Value="0" />
   </Style>
+
+  <!--  avalonia 11  fix  -->
+  <!--<Style Selector="TextBox /template/ Panel#PART_TextFieldPanel">
+    <Setter Property="MinHeight" Value="0" />
+  </Style>
+  <Style Selector="TextBox.Solo /template/ c|MaterialUnderline#PART_Underline">
+    <Setter Property="IsVisible" Value="False" />
+  </Style>
+  <Style Selector="TextBox.Solo /template/ Panel#PART_TextContainer">
+    <Setter Property="Margin" Value="4,14,4,1" />
+  </Style>
+  <Style Selector="TextBox /template/ TextBlock#PART_PlaceholderText">
+    <Setter Property="IsVisible" Value="True" />
+  </Style>
+  <Style Selector="TextBox /template/ Border#PART_LabelRootBorder,                      TextBox:focus-within /template/ Border#PART_LabelRootBorder,                      TextBox:not(:empty) /template/ Border#PART_LabelRootBorder">
+    <Setter Property="IsVisible" Value="False" />
+  </Style>-->
+
 
   <Style Selector="TextBox.Readonly">
     <Setter Property="Margin" Value="20,0,20,20" />

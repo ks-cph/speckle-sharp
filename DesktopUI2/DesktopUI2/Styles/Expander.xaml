@@ -58,7 +58,7 @@
   </Style>
 
 
-  <Style Selector="Expander /template/ ToggleButton#PART_toggle">
+  <Style Selector="Expander /template/ ToggleButton#PART_ToggleButton">
     <Setter Property="assists:ShadowAssist.ShadowDepth" Value="Depth0" />
   </Style>
 
@@ -70,7 +70,7 @@
     <Setter Property="Background" Value="Transparent" />
   </Style>
 
-  <Style Selector="Expander:up /template/ ToggleButton#PART_toggle /template/ ContentPresenter#PART_ContentPresenter, Expander:down /template/ ToggleButton#PART_toggle /template/ ContentPresenter#PART_ContentPresenter">
+  <Style Selector="Expander:up /template/ ToggleButton#PART_ToggleButton /template/ ContentPresenter#PART_ContentPresenter, Expander:down /template/ ToggleButton#PART_ToggleButton /template/ ContentPresenter#PART_ContentPresenter">
     <Setter Property="HorizontalContentAlignment" Value="Stretch" />
   </Style>
 
@@ -84,7 +84,7 @@
     <Setter Property="Background" Value="Transparent" />
   </Style>
 
-  <Style Selector="Expander.Transparent /template/ ToggleButton#PART_toggle">
+  <Style Selector="Expander.Transparent /template/ ToggleButton#PART_ToggleButton">
     <Setter Property="Template">
       <ControlTemplate>
         <Border
@@ -133,7 +133,7 @@
   </Style>-->
 
   <!--  TRANSPARENT EXPANDER, remove borders on header  -->
-  <Style Selector="Expander.Minimal /template/ ToggleButton#PART_toggle">
+  <Style Selector="Expander.Minimal /template/ ToggleButton#PART_ToggleButton">
     <Setter Property="Template">
       <ControlTemplate>
         <Border
@@ -175,7 +175,7 @@
 
 
 
-  <Style Selector="Expander.Edit /template/ ToggleButton#PART_toggle">
+  <Style Selector="Expander.Edit /template/ ToggleButton#PART_ToggleButton">
     <Setter Property="Template">
       <ControlTemplate>
         <Border MinHeight="48" Background="Transparent">

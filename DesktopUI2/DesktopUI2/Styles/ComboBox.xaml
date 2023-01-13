@@ -4,7 +4,7 @@
   xmlns:assists="clr-namespace:Material.Styles.Assists;assembly=Material.Styles"
   xmlns:icons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
   xmlns:ripple="clr-namespace:Material.Ripple;assembly=Material.Ripple">
-  <Style Selector="ComboBoxItem">
+  <!--<Style Selector="ComboBoxItem">
     <Setter Property="Padding" Value="16, 8" />
     <Setter Property="BorderThickness" Value="0" />
     <Setter Property="HorizontalAlignment" Value="Stretch" />
@@ -28,7 +28,15 @@
         </Grid>
       </ControlTemplate>
     </Setter>
+  </Style>-->
+
+  <Style Selector="ComboBox /template/ Panel#PART_RootPanel">
+    <Setter Property="Height" Value="30" />
   </Style>
+  <Style Selector="ComboBox /template/ ContentPresenter#PART_ContentPresenter">
+    <Setter Property="Margin" Value="5" />
+  </Style>
+
   <Style Selector="ComboBoxItem:not(:pointerover) /template/ Border#PointerOverBorder, ComboBoxItem:not(:selected) /template/ Border#PointerOverBorder">
     <Setter Property="Opacity" Value="0" />
   </Style>
@@ -73,9 +81,9 @@
     <Setter Property="FontWeight" Value="Regular" />
   </Style>
 
-	<Style Selector="ComboBox.Outline /template/ Grid#PART_RootBorder">
-		<Setter Property="MinHeight" Value="0" />
-	</Style>
+  <Style Selector="ComboBox.Outline /template/ Grid#PART_RootBorder">
+    <Setter Property="MinHeight" Value="0" />
+  </Style>
 
 
   <Design.PreviewWith>

@@ -29,6 +29,7 @@
   </Style>
   <Style Selector="Button.Flat">
     <Setter Property="TextBlock.FontWeight" Value="Light" />
+    <Setter Property="Foreground" Value="{DynamicResource PrimaryHueMidBrush}" />
   </Style>
   <Style Selector="Button.Mini">
     <Setter Property="TextBlock.FontWeight" Value="Light" />

@@ -13,4 +13,5 @@
   <StyleInclude Source="/Styles/ChipListBox.xaml" />
   <StyleInclude Source="/Styles/NotificationCard.xaml" />
   <StyleInclude Source="/Styles/NotificationManager.xaml" />
+  <StyleInclude Source="/Styles/TabControl.xaml" />
 </Styles>

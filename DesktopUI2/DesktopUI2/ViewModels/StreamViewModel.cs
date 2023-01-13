@@ -1338,7 +1338,7 @@ namespace DesktopUI2.ViewModels
       PreviewOn = false;
     }
 
-    private void SaveCommand()
+    public void SaveCommand()
     {
       try
       {
@@ -1364,7 +1364,7 @@ namespace DesktopUI2.ViewModels
       }
     }
 
-    private void OpenSettingsCommand()
+    public void OpenSettingsCommand()
     {
       try
       {

@@ -25,6 +25,7 @@
 
   <Style Selector="TextBlock.SpeckleFont">
     <Setter Property="FontFamily" Value="/Assets/SpaceGrotesk-VariableFont_wght.ttf#Space Grotesk" />
+    <Setter Property="Foreground" Value="{DynamicResource MaterialDesignBody}" />
   </Style>
 
   <Style Selector="Button &gt; TextBlock, TextBlock.ButtonText">

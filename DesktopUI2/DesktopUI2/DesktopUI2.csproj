@@ -32,6 +32,7 @@
     <None Remove="App.xaml" />
     <None Remove="Styles\NotificationCard.xaml" />
     <None Remove="Styles\NotificationManager.xaml" />
+    <None Remove="Styles\TabControl.xaml" />
     <None Remove="Views\Controls\CollaboratorsControl.xaml" />
     <None Remove="Views\Controls\PreviewButton.xaml" />
     <None Remove="Styles\Button.xaml" />
@@ -113,6 +114,10 @@
     </AvaloniaResource>
     <AvaloniaResource Include="Styles\Styles.xaml">
       <Generator></Generator>
+    </AvaloniaResource>
+    <AvaloniaResource Include="Styles\TabControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </AvaloniaResource>
     <AvaloniaResource Include="Styles\TextBox.xaml">
       <SubType>Designer</SubType>

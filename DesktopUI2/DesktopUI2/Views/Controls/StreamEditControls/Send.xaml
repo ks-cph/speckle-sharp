@@ -160,9 +160,10 @@
       <TextBox
         Margin="0,0,10,0"
         Padding="0"
+				CornerRadius="5"
         HorizontalAlignment="Stretch"
         HorizontalContentAlignment="Stretch"
-        Classes="Filled Dense"
+        Classes="filled dense"
         Foreground="Gray"
         IsEnabled="{Binding Progress.IsProgressing, Converter={x:Static BoolConverters.Not}}"
         IsReadOnly="{Binding Progress.IsProgressing}"
