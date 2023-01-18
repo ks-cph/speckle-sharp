@@ -1377,12 +1377,12 @@ namespace DesktopUI2.ViewModels
       }
     }
 
-    private void AskRemoveSavedStreamCommand()
+    public void AskRemoveSavedStreamCommand()
     {
       IsRemovingStream = true;
     }
 
-    private void CancelRemoveSavedStreamCommand()
+    public void CancelRemoveSavedStreamCommand()
     {
       IsRemovingStream = false;
     }
@@ -1391,7 +1391,7 @@ namespace DesktopUI2.ViewModels
     [DependsOn(nameof(SelectedFilter))]
     [DependsOn(nameof(SelectedCommit))]
     [DependsOn(nameof(IsReceiver))]
-    private bool CanSaveCommand(object parameter)
+    public bool CanSaveCommand(object parameter)
     {
       return true;
     }
@@ -1399,7 +1399,7 @@ namespace DesktopUI2.ViewModels
     [DependsOn(nameof(SelectedBranch))]
     [DependsOn(nameof(SelectedFilter))]
     [DependsOn(nameof(IsReceiver))]
-    private bool CanSendCommand(object parameter)
+    public bool CanSendCommand(object parameter)
     {
       return IsReady();
     }
@@ -1407,7 +1407,7 @@ namespace DesktopUI2.ViewModels
     [DependsOn(nameof(SelectedBranch))]
     [DependsOn(nameof(SelectedCommit))]
     [DependsOn(nameof(IsReceiver))]
-    private bool CanReceiveCommand(object parameter)
+    public bool CanReceiveCommand(object parameter)
     {
       return IsReady();
     }
@@ -1416,7 +1416,7 @@ namespace DesktopUI2.ViewModels
     [DependsOn(nameof(SelectedCommit))]
     [DependsOn(nameof(SelectedFilter))]
     [DependsOn(nameof(IsReceiver))]
-    private bool CanPreviewCommand(object parameter)
+    public bool CanPreviewCommand(object parameter)
     {
       bool previewImplemented = IsReceiver ? Bindings.CanPreviewReceive : Bindings.CanPreviewSend;
       if (previewImplemented)

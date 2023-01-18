@@ -18,7 +18,13 @@
             <ListBoxItem Content="Item 3" />
           </ListBox.Items>
         </ListBox>
-
+        <ListBox Classes="Chip" SelectionMode="Multiple">
+          <ListBox.Items>
+            <ListBoxItem Content="Item 1" IsSelected="True" />
+            <ListBoxItem Content="Item 2" />
+            <ListBoxItem Content="Item 3" />
+          </ListBox.Items>
+        </ListBox>
 
       </StackPanel>
     </Border>

@@ -30,9 +30,9 @@
     <Grid>
       <!--  ROUTER  -->
       <reactiveUi:RoutedViewHost Grid.Row="1" Router="{Binding Router}">
-        <reactiveUi:RoutedViewHost.PageTransition>
+        <!--<reactiveUi:RoutedViewHost.PageTransition>
           <CrossFade Duration="0.15" />
-        </reactiveUi:RoutedViewHost.PageTransition>
+        </reactiveUi:RoutedViewHost.PageTransition>-->
       </reactiveUi:RoutedViewHost>
       <!--  DIALOG  -->
       <Grid IsVisible="{Binding DialogVisible}" Opacity="{Binding DialogOpacity}">

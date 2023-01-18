@@ -21,6 +21,12 @@
         Classes="Flat"
         Content="Hello!" />
 
+      <Button
+        HorizontalAlignment="Center"
+        VerticalAlignment="Center"
+        Classes="Outline"
+        Content="Hello!" />
+
       <Button Classes="Send" />
       <Button Classes="SendFull" />
 
@@ -30,7 +36,8 @@
   <Style Selector="Button">
     <Setter Property="Foreground" Value="White" />
   </Style>
-  <Style Selector="Button.Flat">
+
+  <Style Selector="Button.Flat, Button.Outline">
     <Setter Property="TextBlock.FontWeight" Value="Light" />
     <Setter Property="Foreground" Value="{DynamicResource PrimaryHueMidBrush}" />
   </Style>
