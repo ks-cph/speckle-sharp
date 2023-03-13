@@ -117,12 +117,12 @@ namespace ConnectorGrasshopper.Extras
       Action onConversionProgress = null)
     {
       var dataTree = new GH_Structure<IGH_Goo>();
-      @base.GetDynamicMembers().ToList().ForEach(key =>
+      @base.GetMembers(DynamicBaseMemberType.Dynamic).ToList().ForEach(keyval =>
       {
-        var value = @base[key] as List<object>;
+        var value = @base[keyval.Key] as List<object>;
         var path = new GH_Path();
         var pattern = new Regex(dataTreePathPattern); // Match for the dynamic detach magic "@(DETACH_INT)PATH"
-        var matchRes = pattern.Match(key);
+        var matchRes = pattern.Match(keyval.Key);
         if (matchRes.Length == 0) return;
         var pathKey = matchRes.Groups["path"].Value;
         var res = path.FromString(pathKey);
@@ -145,7 +145,7 @@ namespace ConnectorGrasshopper.Extras
     public static bool CanConvertToDataTree(Base @base)
     {
       var regex = new Regex(dataTreePathPattern);
-      var dynamicMembers = @base.GetDynamicMembers().ToList();
+      var dynamicMembers = @base.GetMembers(DynamicBaseMemberType.Dynamic).Keys.ToList();
       if (dynamicMembers.Count == 0) return false;
       var isDataTree = dynamicMembers.All(el => regex.Match(el).Success);
       return isDataTree;
@@ -552,7 +552,7 @@ namespace ConnectorGrasshopper.Extras
         var converted = Converter.ConvertToNative(@base);
         data.Append(WrapInGhType(converted));
       }
-      else if (unwrap && @base.GetDynamicMembers().Count() == 1 && (@base["@data"] != null || @base["@Data"] != null))
+      else if (unwrap && @base.GetMembers(DynamicBaseMemberType.Dynamic).Count == 1 && (@base["@data"] != null || @base["@Data"] != null))
       {
         // Comes from a wrapper
         var wrappedData = @base["@data"] ?? @base["@Data"];

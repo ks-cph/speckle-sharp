@@ -301,7 +301,7 @@ namespace ConnectorGrasshopper.Objects
         }
         if (converted is Base b)
         {
-          b.GetMemberNames().ToList().ForEach(prop =>
+          b.GetMembers().Keys.ToList().ForEach(prop =>
           {
             if (!fullProps.Contains(prop))
               fullProps.Add(prop);

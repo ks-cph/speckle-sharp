@@ -823,7 +823,7 @@ namespace ConnectorGrasshopper.Ops
 
       // Get the full list of output parameters
       var fullProps = new List<string>();
-      b?.GetMemberNames().ToList().ForEach(prop =>
+      b?.GetMembers().Keys.ToList().ForEach(prop =>
       {
         if (!fullProps.Contains(prop))
           fullProps.Add(prop);

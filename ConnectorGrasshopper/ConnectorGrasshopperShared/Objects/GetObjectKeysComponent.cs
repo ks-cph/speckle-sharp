@@ -44,7 +44,7 @@ namespace ConnectorGrasshopper.Objects
         if (speckleObject.Value == null)
           return;
 
-        var keys = speckleObject.Value.GetMemberNames();
+        var keys = speckleObject.Value.GetMembers().Keys;
 
         DA.SetDataList(0, keys);
       }
@@ -61,7 +61,7 @@ namespace ConnectorGrasshopper.Objects
             if (speckleObject == null)
               return;
 
-            var objKeys = speckleObject.GetMemberNames();
+            var objKeys = speckleObject.GetMembers().Keys;
             foreach (var key in objKeys)
               if (!keys.Contains(key))
                 keys.Add(key); 

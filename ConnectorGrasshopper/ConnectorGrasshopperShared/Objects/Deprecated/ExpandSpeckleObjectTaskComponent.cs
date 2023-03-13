@@ -298,7 +298,7 @@ namespace ConnectorGrasshopper.Objects
       foreach (var ghGoo in speckleObjects.AllData(true))
       {
         var b = (ghGoo as GH_SpeckleBase)?.Value;
-        b?.GetMemberNames().ToList().ForEach(prop =>
+        b?.GetMembers().Keys.ToList().ForEach(prop =>
         {
           if (!fullProps.Contains(prop))
             fullProps.Add(prop);
