@@ -183,7 +183,7 @@ namespace Speckle.Core.Serialisation
         ParentClosures.Add(closure);
 
       List<(PropertyInfo, PropertyAttributeInfo)> typedProperties = GetTypedPropertiesWithCache(baseObj);
-      IEnumerable<string> dynamicProperties = baseObj.GetDynamicMembers();
+      IEnumerable<string> dynamicProperties = baseObj.GetMembers(DynamicBaseMemberType.Dynamic).Keys;
 
       // propertyName -> (originalValue, isDetachable, isChunkable, chunkSize)
       Dictionary<string, (object, PropertyAttributeInfo)> allProperties = new Dictionary<string, (object, PropertyAttributeInfo)>();

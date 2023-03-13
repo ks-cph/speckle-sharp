@@ -22,7 +22,7 @@ namespace Speckle.Core.Models.GraphTraversal
         .When(HasDisplayValue)
         .ContinueTraversing(b =>
         {
-          var membersToTraverse = b.GetDynamicMembers()
+          var membersToTraverse = b.GetMembers(DynamicBaseMemberType.Dynamic).Keys
             .Concat(displayValueAliases)
             .Concat(elementsAliases)
             .Except(ignoreProps);
@@ -53,7 +53,7 @@ namespace Speckle.Core.Models.GraphTraversal
       
       var displayValueRule = TraversalRule.NewTraversalRule()
         .When(HasDisplayValue)
-        .ContinueTraversing(b => b.GetDynamicMembers()
+        .ContinueTraversing(b => b.GetMembers(DynamicBaseMemberType.Dynamic).Keys
           .Concat(displayValueAliases)
           .Except(elementsAliases)
           .Except(ignoreProps)
@@ -84,7 +84,7 @@ namespace Speckle.Core.Models.GraphTraversal
     internal static IEnumerable<string> DisplayValueAliases(Base _) => displayValueAliases;
     internal static IEnumerable<string> None(Base _) => Enumerable.Empty<string>();
     internal static SelectMembers Members(DynamicBaseMemberType includeMembers = DynamicBase.DefaultIncludeMembers) => x => x.GetMembers(includeMembers).Keys;
-    internal static SelectMembers DynamicMembers() => x => x.GetDynamicMembers();
+    internal static SelectMembers DynamicMembers() => x => x.GetMembers(DynamicBaseMemberType.Dynamic).Keys;
     internal static SelectMembers Concat(params SelectMembers[] selectProps) => x => selectProps.SelectMany(i => i.Invoke(x));
     internal static SelectMembers Except(SelectMembers selectProps, IEnumerable<string> excludeProps) => x => selectProps.Invoke(x).Except(excludeProps);
     internal static bool HasElements(Base x) => elementsAliases.Any(m => x[m] != null);

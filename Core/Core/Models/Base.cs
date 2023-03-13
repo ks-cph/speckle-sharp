@@ -124,7 +124,7 @@ namespace Speckle.Core.Models
         }
       }
 
-      var dynamicProps = @base.GetDynamicMembers();
+      var dynamicProps = @base.GetMembers(DynamicBaseMemberType.Dynamic).Keys;
       var chunkSyntax = new System.Text.RegularExpressions.Regex(@"^@\((\d*)\)");
       foreach (var propName in dynamicProps)
       {

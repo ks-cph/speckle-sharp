@@ -163,8 +163,8 @@ namespace Speckle.Core.Models
     /// <param name="props">The base class object representing application props</param>
     public static void SetApplicationProps(object o, Type t, Base props)
     {
-      var propNames = props.GetDynamicMembers();
-      if (o == null || propNames.Count() == 0)
+      var propNames = props.GetMembers(DynamicBaseMemberType.Dynamic).Keys;
+      if (o == null || propNames.Count == 0)
         return;
 
       var typeProperties = t.GetProperties().ToList();
