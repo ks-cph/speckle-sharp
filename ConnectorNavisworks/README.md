@@ -16,7 +16,7 @@ Comprehensive developer and user documentation can be found in our:
 
 ### Requirements
 
-- Navisworks 2020 or above
+- Navisworks 2020 - 2024
 - Visual Studio 2019 or above (or similar IDE)
 - A Speckle account (you can make one at https://speckle.xyz/)
 
@@ -26,8 +26,8 @@ Comprehensive developer and user documentation can be found in our:
 
 To use Speckle, you'll need a Speckle account. This can be in our XYZ server, in a local server or anywhere else.
 You can log in to your account:
-- from Manager, available at https://speckle-releases.netlify.app/
-- or, if using our latest release, you can also log in directly from the Navisworks connector
+- from Manager, available at https://speckle.systems/download/
+- or, if using our latest release, you can also log in directly from the Navisworks Connector.
 
 ![login](https://user-images.githubusercontent.com/2679513/159454529-6b85eb3b-e964-4b39-87ba-286799771e3d.gif)
 
