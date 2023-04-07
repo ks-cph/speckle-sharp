@@ -5,6 +5,7 @@
 #include "FieldNames.hpp"
 #include "OnExit.hpp"
 #include "AttributeManager.hpp"
+using namespace FieldNames;
 
 
 namespace AddOnCommands {
@@ -36,7 +37,9 @@ static GSErrCode FindAndDeleteOldElement (const API_Guid& applicationId)
 }
 
 
-static GS::Optional<API_Guid> CreateElement (const API_Guid & applicationId, const ModelInfo& modelInfo, AttributeManager& attributeManager)
+static GS::Optional<API_Guid> CreateElement (const API_Guid & applicationId,
+	const ModelInfo & modelInfo,
+	AttributeManager & attributeManager)
 {
 	GSErrCode err = FindAndDeleteOldElement (applicationId);
 	if (err != NoError) {
@@ -69,7 +72,7 @@ static GS::Optional<API_Guid> CreateElement (const API_Guid & applicationId, con
 		bodyVertices.Push (bodyVertex);
 	}
 
-	for (const auto& polygon : modelInfo.GetPolygons()) {
+	for (const auto& polygon : modelInfo.GetPolygons ()) {
 		UInt32 bodyPolygon = 0;
 		Int32 bodyEdge = 0;
 
@@ -93,7 +96,7 @@ static GS::Optional<API_Guid> CreateElement (const API_Guid & applicationId, con
 				overrideMaterial.overridden = true;
 			}
 		}
-	
+
 		ACAPI_Body_AddPolygon (bodyData, polygonEdges, 0, overrideMaterial, bodyPolygon);
 	}
 
@@ -117,11 +120,11 @@ static GS::Optional<API_Guid> CreateElement (const GS::ObjectState & elementMode
 {
 	try {
 		GS::UniString id;
-		elementModelOs.Get (ApplicationIdFieldName, id);
+		elementModelOs.Get (ApplicationId, id);
 
 		// get the mesh
 		ModelInfo modelInfo;
-		elementModelOs.Get (Model::ModelFieldName, modelInfo);
+		elementModelOs.Get (Model::Model, modelInfo);
 
 		AttributeManager attributeManager;
 		return CreateElement (APIGuidFromString (id.ToCStr ()), modelInfo, attributeManager);
@@ -137,12 +140,13 @@ GS::String CreateDirectShape::GetName () const
 }
 
 
-GS::ObjectState CreateDirectShape::Execute (const GS::ObjectState & parameters, GS::ProcessControl& /*processControl*/) const
+GS::ObjectState CreateDirectShape::Execute (const GS::ObjectState & parameters,
+	GS::ProcessControl& /*processControl*/) const
 {
 	GS::Array<GS::UniString> applicationIds;
 
 	GS::Array<GS::ObjectState> models;
-	parameters.Get (ModelsFieldName, models);
+	parameters.Get (Models, models);
 
 	ACAPI_CallUndoableCommand ("CreateSpeckleMorphs", [&] () -> GSErrCode {
 
@@ -156,9 +160,8 @@ GS::ObjectState CreateDirectShape::Execute (const GS::ObjectState & parameters, 
 		return NoError;
 		});
 
-	return GS::ObjectState (ApplicationIdsFieldName, applicationIds);
+	return GS::ObjectState (ApplicationIds, applicationIds);
 }
 
 
-
-}
+} // namespace AddOnCommands

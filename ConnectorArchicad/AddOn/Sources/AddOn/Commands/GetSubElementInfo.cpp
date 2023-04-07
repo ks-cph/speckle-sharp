@@ -6,24 +6,27 @@
 #include "RealNumber.h"
 #include "FieldNames.hpp"
 #include "TypeNameTables.hpp"
+using namespace FieldNames;
 
 
 namespace AddOnCommands {
+
 
 GS::String GetSubElementInfo::GetName () const
 {
 	return GetSubelementInfoCommandName;
 }
 
+
 GS::ObjectState GetSubElementInfo::Execute (const GS::ObjectState& parameters, GS::ProcessControl& /*processControl*/) const
 {
 	GSErrCode err = NoError;
 	GS::UniString id;
-	parameters.Get (ApplicationIdFieldName, id);
+	parameters.Get (ApplicationId, id);
 	API_Guid wallGuid = APIGuidFromString (id.ToCStr ());
 
 	GS::ObjectState result;
-	const auto& listAdder = result.AddList<GS::ObjectState> (SubelementModelsFieldName);
+	const auto& listAdder = result.AddList<GS::ObjectState> (SubelementModels);
 
 	API_Element wallElement{};
 	wallElement.header.guid = wallGuid;
@@ -39,13 +42,14 @@ GS::ObjectState GetSubElementInfo::Execute (const GS::ObjectState& parameters, G
 			GS::UniString elemType = elementNames.Get (elementTypeId);
 
 			GS::ObjectState subelementModel;
-			subelementModel.Add (ApplicationIdFieldName, guid);
-			subelementModel.Add (ElementTypeFieldName, elemType);
+			subelementModel.Add (ApplicationId, guid);
+			subelementModel.Add (ElementType, elemType);
 			listAdder (subelementModel);
 		}
 	}
 
 	return result;
 }
+
 
 }

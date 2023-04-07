@@ -114,103 +114,102 @@ namespace Objects.BuiltElements.Archicad
 {
   public class ArchicadColumn : Objects.BuiltElements.Column
   {
-    [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-    public int? floorIndex { get; set; }
-
-    [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-    public Point origoPos { get; set; }
-
-    [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-    public double height { get; set; }
-
-    [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-    public short? aboveViewLinePen { get; set; }
-
-    [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-    public bool? isAutoOnStoryVisibility { get; set; }
-
-    [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-    public short? hiddenLinePen { get; set; }
-
-    [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-    public short? belowViewLinePen { get; set; }
-
-    [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-    public bool? isFlipped { get; set; }
-
-    [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-    public bool? isSlanted { get; set; }
-
-    [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-    public double? slantAngle { get; set; }
-
-    [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-    public UInt32? nSegments { get; set; }
-
-    [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-    public UInt32? nCuts { get; set; }
-
-    [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-    public UInt32? nSchemes { get; set; }
-
-    [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-    public UInt32? nProfiles { get; set; }
-
-    [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-    public bool? useCoverFill { get; set; }
-
-    [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-    public bool? useCoverFillFromSurface { get; set; }
-
-    [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-    public bool? coverFillOrientationComesFrom3D { get; set; }
-
-    [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-    public short? coverFillForegroundPen { get; set; }
-
-    [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-    public short? corePen { get; set; }
-
-    [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-    public short? coreAnchor { get; set; }
-
-    [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-    public double? bottomOffset { get; set; }
-
-    [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-    public double? topOffset { get; set; }
-
-    [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-    public double? coreSymbolPar1 { get; set; }
-
-    [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-    public double? coreSymbolPar2 { get; set; }
-
-    [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-    public double? slantDirectionAngle { get; set; }
-
-    [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-    public short? relativeTopStory { get; set; }
-
-    [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-    public Dictionary<string, Segment>? Segments { get; set; }
-
-    [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-    public Dictionary<string, Scheme>? Schemes { get; set; }
-
-    [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-    public Dictionary<string, Cut>? Cuts { get; set; }
-
-
-    public ArchicadColumn() { }
-
-    [SchemaInfo("ArchicadColumn", "Creates an Archicad Column by curve.", "Archicad", "Structure")]
-
-    public ArchicadColumn(Point startPoint, double columnHeight)
+    public class ColumnSegment : Base
     {
-      origoPos = startPoint;
-      height = columnHeight;
+      // Segment - Veneer attributes
+      public string? veneerType { get; set; }
+      public string? veneerBuildingMaterial { get; set; }
+      public double? veneerThick { get; set; }
+      // Segment - The extrusion overridden material name
+      public string? extrusionSurfaceMaterial { get; set; }
+      // Segment - The ends overridden material name
+      public string? endsSurfaceMaterial { get; set; }
+      // Segment - The overridden materials are chained
+      public bool? materialChained { get; set; }
+      public AssemblySegment assemblySegmentData { get; set; }
     }
 
+    // Wall geometry
+    public int? floorIndex { get; set; }
+    public Point origoPos { get; set; }
+    public double height { get; set; }
+
+    // Positioning - story relation
+    public double bottomOffset { get; set; }
+    public double topOffset { get; set; }
+    public short relativeTopStory { get; set; }
+
+    // Positioning - slanted column
+    public bool isSlanted { get; set; }
+    public double slantAngle { get; set; }
+    public double slantDirectionAngle { get; set; }
+    public bool isFlipped { get; set; }
+
+    // Positioning - wrapping
+    public bool wrapping { get; set; }
+
+    // Positioning - Defines the relation of column to zones (Zone Boundary, Reduce Zone Area Only, No Effect on Zones)
+    public string columnRelationToZoneName { get; set; }
+
+    // End Cuts
+    public UInt32 nCuts { get; set; }
+    public Dictionary<string, AssemblySegmentCut> Cuts { get; set; }
+
+    // Reference Axis
+    public short? coreAnchor { get; set; }
+    public double? axisRotationAngle { get; set; }
+
+    // Segment
+    public UInt32 nSegments { get; set; }
+    public UInt32 nProfiles { get; set; }
+    public Dictionary<string, ColumnSegment> segments { get; set; }
+
+    // Scheme
+    public UInt32? nSchemes { get; set; }
+    public Dictionary<string, AssemblySegmentScheme>? Schemes { get; set; }
+
+    // Floor Plan and Section - Floor Plan Display
+    public string showOnStories { get; set; }
+    public string displayOptionName { get; set; }
+    public string showProjectionName { get; set; }
+
+    // Floor Plan and Section - Cut Surfaces
+    public short? corePen { get; set; }
+    public string? contLtype { get; set; }
+    public short? venLinePen { get; set; }
+    public string? venLineType { get; set; }
+    public short? overrideCutFillPen { get; set; }
+    public short? overrideCutFillBackgroundPen { get; set; }
+
+    // Floor Plan and Section - Outlines
+    public short uncutLinePen { get; set; }
+    public string uncutLinetype { get; set; }
+    public short overheadLinePen { get; set; }
+    public string overheadLinetype { get; set; }
+    public short hiddenLinePen { get; set; }
+    public string hiddenLinetype { get; set; }
+
+    // Floor Plan and Section - Floor Plan Symbol
+    public string coreSymbolTypeName { get; set; }
+    public double coreSymbolPar1 { get; set; }
+    public double coreSymbolPar2 { get; set; }
+    public short coreSymbolPen { get; set; }
+
+    // Floor Plan and Section - Cover Fills
+    public bool useCoverFill { get; set; }
+    public bool? useCoverFillFromSurface { get; set; }
+    public short? coverFillForegroundPen { get; set; }
+    public short? coverFillBackgroundPen { get; set; }
+    public string? coverFillType { get; set; }
+    public string? coverFillTransformationType { get; set; }
+    public double? coverFillTransformationOrigoX { get; set; }
+    public double? coverFillTransformationOrigoY { get; set; }
+    public double? coverFillTransformationXAxisX { get; set; }
+    public double? coverFillTransformationXAxisY { get; set; }
+    public double? coverFillTransformationYAxisX { get; set; }
+    public double? coverFillTransformationYAxisY { get; set; }
+
+    [SchemaInfo("ArchicadColumn", "Creates an Archicad Column by curve.", "Archicad", "Structure")]
+    public ArchicadColumn() {}
   }
 }
