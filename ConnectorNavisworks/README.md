@@ -49,7 +49,7 @@ And then you can click debug. The post build actions will copy all necessary fil
 By default the Connector installs for the active user in the AppData roaming folder. You can change this by editing the `ConnectorNavisworks.csproj` in the PostBuildEvent.
 It builds a .bundle form of plugin and uses the package.xml to install it in the Navisworks plugins folder, this maps the versions supported by Speckle Connector for Navisworks.
 
-![img.png](img.png)
+<img width="642" alt="image" src="https://user-images.githubusercontent.com/760691/231252939-73a230bf-529e-4f78-8d85-c10a8d1256e7.png">
 
 #### Conversions
 
